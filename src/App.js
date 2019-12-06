@@ -1,10 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {createStore} from "redux";
+import RootReducer from "./reducers/RootReducer";
+import {Provider} from 'react-redux'
+const store = createStore(RootReducer);
 
 function App() {
   return (
     <div className="App">
+      <Provider store={store}>
+        <App/>
+      </Provider>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
