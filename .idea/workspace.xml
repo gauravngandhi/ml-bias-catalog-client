@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2a6cbb6c-88ea-40c0-bc4d-9283c449c5c9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IncidentsReportedPerYearChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IncidentsReportedPerYearChart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/AppConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/AppConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Charts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Charts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/IncidentsReportedPerYearChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IncidentsReportedPerYearChartByBias.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/ChartService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ChartService.js" afterDir="false" />
     </list>
@@ -82,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575585048045</updated>
-      <workItem from="1575585052654" duration="26938000" />
+      <workItem from="1575585052654" duration="28179000" />
     </task>
     <servers />
   </component>

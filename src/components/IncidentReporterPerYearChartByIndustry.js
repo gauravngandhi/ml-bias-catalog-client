@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import { Chart } from "react-google-charts";
 import ChartService from "../services/ChartService";
-import BiasService from "../services/BiasService";
+import IndustryService from "../services/IndustryService";
 
-class IncidentsReportedPerYearChart extends Component {
+class IncidentsReportedPerYearChartByIndustry extends Component {
 
     chartService = ChartService.getInstance();
-    biasService = BiasService.getInstance();
+    industryService = IndustryService.getInstance();
     constructor(props) {
         super(props);
         this.state = {
@@ -16,22 +16,20 @@ class IncidentsReportedPerYearChart extends Component {
 
     getChartData = () => {
         let currentChartData;
-        const incidentPromise =  this.chartService.getIncidentsReportedPerYear();
-        const biasTypePromise =  this.biasService.getAllBias();
-        Promise.all([incidentPromise, biasTypePromise])
+        const incidentPromise =  this.chartService.getIncidentReportedPerYearByIndustry();
+        const industryPromise =  this.industryService.getAllIndustry();
+        Promise.all([incidentPromise, industryPromise])
             .then(res => {
                 const incidentData = res[0];
-                const biasTypes = res[1];
-                console.log(incidentData);
+                const industryTypes = res[1];
                 //console.log(biasTypes);
                 let chartDataType = ['Year'];
-                biasTypes.forEach(bias => chartDataType.push(bias.type));
+                industryTypes.forEach(bias => chartDataType.push(bias.name));
                 let data = [chartDataType];
                 incidentData.forEach(inData => {
                     //console.log(year);
                     let row = [inData.Year.toString()];
-                    console.log(inData);
-                    inData.CountByBias.forEach(biasCount => row.push(biasCount.Count));
+                    inData.CountByIndustry.forEach(industryCount => row.push(industryCount.Count));
                     data.push(row);
                 });
                 console.log(data);
@@ -48,14 +46,14 @@ class IncidentsReportedPerYearChart extends Component {
     render() {
         if(this.state.chartData) {
             return (
-                <div className={"incidents-per-year-chart"}>
+                <div className={"incidents-per-year-chart-by-industry"}>
                     <Chart
                         chartType="ColumnChart"
                         data={this.state.chartData}
                         width="100%"
                         height="100%"
                         options={{
-                            title: 'Incidents Per Year',
+                            title: 'Incidents Per Year By Industry',
                             hAxis: {
                                 title: 'Year'
                             },
@@ -79,5 +77,5 @@ class IncidentsReportedPerYearChart extends Component {
     }
 }
 
-export default IncidentsReportedPerYearChart;
+export default IncidentsReportedPerYearChartByIndustry;
 

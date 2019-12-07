@@ -1,10 +1,14 @@
 import React from "react";
-import IncidentsReportedPerYearChart from "./IncidentsReportedPerYearChart";
+import IncidentsReportedPerYearChartByBias from "./IncidentsReportedPerYearChartByBias";
+import IncidentsReportedPerYearChartByIndustry from "./IncidentReporterPerYearChartByIndustry";
 
 const Charts = () =>
     <div className='row'>
-        <div className='col-12'>
-        <IncidentsReportedPerYearChart/>
+        <div className='col-6'>
+        <IncidentsReportedPerYearChartByBias/>
+        </div>
+        <div className='col-6'>
+            <IncidentsReportedPerYearChartByIndustry/>
         </div>
     </div>
 

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
-import IncidentsReportedPerYearChart from "./components/IncidentsReportedPerYearChart";
+import IncidentsReportedPerYearChartByBias from "./components/IncidentsReportedPerYearChartByBias";
 import Dashboard from "./components/Dashboard";
 
 ReactDOM.render(<Dashboard />, document.getElementById('root'));

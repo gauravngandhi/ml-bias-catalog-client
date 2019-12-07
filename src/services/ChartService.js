@@ -12,8 +12,16 @@ class ChartService {
         return this.myInstance;
     }
 
-    getIncidentsReportedPerYear = () => {
+    getIncidentsReportedPerYearByBias = () => {
         return fetch(CHART_URL + '/incidentreportedperyearbybias', {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .catch(error => Promise.reject(error));
+    }
+
+    getIncidentReportedPerYearByIndustry = () => {
+        return fetch(CHART_URL + '/incidentreportedperyearbyindustry', {
             method: 'GET',
         })
             .then(response => response.json())
