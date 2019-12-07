@@ -29,8 +29,9 @@ class IncidentsReportedPerYearChart extends Component {
                 let data = [chartDataType];
                 incidentData.forEach(inData => {
                     //console.log(year);
-                    let row = [inData.year];
-                    inData.count.forEach(count => row.push(count));
+                    let row = [inData.Year.toString()];
+                    console.log(inData);
+                    inData.CountByBias.forEach(biasCount => row.push(biasCount.Count));
                     data.push(row);
                 });
                 console.log(data);
@@ -55,6 +56,12 @@ class IncidentsReportedPerYearChart extends Component {
                         height="100%"
                         options={{
                             title: 'Incidents Per Year',
+                            hAxis: {
+                                title: 'Year'
+                            },
+                            vAxis: {
+                                title: 'Incidents'
+                            },
                             chartArea: {
                                 width: '50%'
                             },
