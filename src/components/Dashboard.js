@@ -10,11 +10,15 @@ class Dashboard extends Component {
     }
     render() {
         return (
-            <div class='container-fluid'>
+            <div className='container-fluid'>
                 <Router>
                     <Route path={"/Dashboard"} component={Dashboard}/>
+                    <div className='row'>
                     <Header/>
+                    </div>
+                    <div className='row'>
                     <Charts/>
+                    </div>
                 </Router>
             </div>
         )

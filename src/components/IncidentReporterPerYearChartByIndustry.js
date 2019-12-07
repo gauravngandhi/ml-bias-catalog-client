@@ -46,7 +46,7 @@ class IncidentsReportedPerYearChartByIndustry extends Component {
     render() {
         if(this.state.chartData) {
             return (
-                <div className={"incidents-per-year-chart-by-industry"}>
+                <div className={"incidents-per-year-chart-by-industry d-block w-100"}>
                     <Chart
                         chartType="ColumnChart"
                         data={this.state.chartData}
