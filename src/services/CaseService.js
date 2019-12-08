@@ -1,4 +1,5 @@
-
+const c ="https://cors-anywhere.herokuapp.com/"
+const url = "https://radiant-forest-87925.herokuapp.com/"
 class CaseService {
     constructor() {}
 
@@ -60,19 +61,57 @@ class CaseService {
 
     findAllCases = () =>
         {
-            return fetch("https://radiant-forest-87925.herokuapp.com/" +
+            return fetch(c+url +
                                 "api/dataset" , {
                 method: 'get',
-                credentials: "include",
+                credentials: "omit",
                 headers: {
                     'Content-type': 'application/json',
-                    'Access-Control-Allow-Origin':'*'
+                    "Accept": "*/*",
+                    "Accept-Encoding": "gzip, deflate",
+                    "Connection": "keep-alive",
+                    "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+                    "Access-Control-Allow-Methods":"GET, POST, PUT, DELETE, OPTIONS"
                 }
             }).then(response => response.json())
                 .catch(error => {
                     console.log('request failed', error);
                 });
         };
+
+    findCasesByFilter = (company, bias) =>
+    {
+        if(!company){
+            company = "All"
+        }
+        if(!bias){
+            bias = "All"
+        }
+        console.log(c+url +
+            "api/filter/"+bias+"/"+company)
+        return fetch(c+url +
+            "api/filter/"+bias+"/"+company, {
+            method: 'get',
+            credentials: "omit",
+            headers: {
+                'Content-type': 'application/json',
+                "Accept": "*/*",
+                "Accept-Encoding": "gzip, deflate",
+                "Connection": "keep-alive",
+                "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+                "Access-Control-Allow-Methods":"GET, POST, PUT, DELETE, OPTIONS"
+            }
+        }).then(response => {if(response){console.log(response); return response.json()}
+                                        else{
+                                            console.log(response);
+                                            var o = {"year":"0000", "company":"No result", "industry":"No result", "type_of_bias":"N/A", "link": "N/A"};
+                                            return o.json()
+                                        }
+        })
+            .catch(error => {
+                console.log('request failed', error);
+            });
+    };
 
 
 }

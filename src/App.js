@@ -14,7 +14,9 @@ class App extends React.Component{
         this.caseService = new CaseService()
         this.state = {
             loggedIn:"no",
-            showbutton: "no"
+            showbutton: "no",
+            company:'',
+            bias:''
         }
         this.caseService.findAllCases().then((cases)=>{
             this.setState({cases: cases})
@@ -28,12 +30,32 @@ class App extends React.Component{
                 x.setState({
                     "user": '5200',
                     "loggedIn": 'yes'
-                })
+                },)
             }
             else{
                 alert("Incorrect user ID and password..<br/> Mock Username = John Password = Ford ")
             }
+        }).then(this.caseService.findAllCases())
+    }
+
+    companyFilter = (filter) =>{
+        this.setState({
+            company: filter
         })
+        this.findResults(filter, this.state.bias)
+    }
+
+    findResults = (company, bias) => {
+        this.caseService.findCasesByFilter(company, bias)
+            .then(res => this.setState({cases: res}))
+    }
+
+    biasFilter = (filter) =>{
+        console.log(filter +"bias")
+            this.setState({
+                bias: filter
+            })
+         this.findResults(this.state.company, filter)
     }
 
     helpLogin = (user) => {}
@@ -55,7 +77,9 @@ class App extends React.Component{
             <div>
                 <Route path='/' exact
                        render={() =>
-                           <DataSetTable abcs={this.state.cases} />}/>
+                           <DataSetTable abcs={this.state.cases}
+                                         companyFilter={this.companyFilter}
+                                         biasFilter={this.biasFilter}/>}/>
             </div>
         </Router>
     )
