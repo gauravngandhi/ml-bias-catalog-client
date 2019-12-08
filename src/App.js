@@ -39,6 +39,9 @@ class App extends React.Component{
         }).then(this.caseService.findAllCases())
     }
 
+    addCase = (year, company, industry, system_purpose, type_of_bias, impact, link, ml_model, location) => {
+        this.caseService.addCase(year, company, industry, system_purpose, type_of_bias, impact, link, ml_model, location)
+    }
     companyFilter = (filter) =>{
         this.setState({
             company: filter
