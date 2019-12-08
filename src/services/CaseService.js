@@ -58,31 +58,21 @@ class CaseService {
     //     return promise;
     // }
 
-    findAllCases = () =>{
-
-        const promise = new Promise((resolve, reject) => {
-
-            var data = null;
-
-            var xhr = new XMLHttpRequest();
-            xhr.withCredentials = true;
-
-            xhr.addEventListener("readystatechange", function () {
-                if (this.readyState === 4) {
-                    console.log(this.responseText)
-                    resolve(JSON.parse(this.responseText));
+    findAllCases = () =>
+        {
+            return fetch("https://cors-anywhere.herokuapp.com/https://radiant-forest-87925.herokuapp.com/" +
+                                "api/dataset" , {
+                method: 'get',
+                credentials: "include",
+                headers: {
+                    'Content-type': 'application/json'
                 }
-            });
+            }).then(response => response.json())
+                .catch(error => {
+                    console.log('request failed', error);
+                });
+        };
 
-            xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://radiant-forest-87925.herokuapp.com/"+"api/dataset");
-            xhr.setRequestHeader("cache-control", "no-cache");
-            xhr.setRequestHeader("Postman-Token", "1aa486c8-c855-4dad-abed-1237dfa5c423");
-
-            xhr.send(data);
-
-        })
-        return promise;
-    }
 
 }
 export default CaseService
