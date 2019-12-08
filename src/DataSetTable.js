@@ -17,11 +17,11 @@ const DataSetTable = ({abcs, companyFilter, biasFilter}) =>
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item dropdown">
                         <select  onChange={(event)=>{biasFilter(event.target.value)}}>
+                            <option  value="All">All</option>
                             <option  value="Gender" >Gender</option>
                             <option  value="Racial">Racial</option>
                             <option  value="Regional">Regional</option>
                             <option  value="Facial">Facial</option>
-                            <option  value="All">All</option>
                         </select>
                     </li>
                     <li className="nav-item">
