@@ -76,7 +76,7 @@ class App extends React.Component{
                    render={() =>
                        <Login doLogin={this.login} />}/>
               <Route path={"/dashboard"} render={()=> <Dashboard />} />
-              <Router path={"/createcase"} render={() => <AddIncidentForm/>} />
+              <Route path={"/createcase"} render={() => <AddIncidentForm handleSubmit={this.addCase}/>} />
           </div>
 
         </Router>
@@ -89,7 +89,7 @@ class App extends React.Component{
                                          companyFilter={this.companyFilter}
                                          biasFilter={this.biasFilter}/>}/>
                 <Route path={"/dashboard"} render={()=> <Dashboard />} />
-                <Router path={"/createcase"} render={() => <AddIncidentForm/>} />
+                <Route path={"/createcase"} render={() => <AddIncidentForm handleSubmit={this.addCase}/>} />
             </div>
             {/*<div></div>*/}
         </Router>
