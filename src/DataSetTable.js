@@ -1,11 +1,12 @@
 import React from 'react';
 import CaseRow from './CaseRow'
+import {BrowserRouter as Link} from 'react-router-dom'
 
 const DataSetTable = ({abcs, companyFilter, biasFilter}) =>
     <div>
 <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="#">Navbar</a>
+            <a className="navbar-brand" href="#">Candor</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -21,10 +22,18 @@ const DataSetTable = ({abcs, companyFilter, biasFilter}) =>
                             <option  value="All">All</option>
                         </select>
                     </li>
+                    <li>
+                        <a className="btn btn-secondary" href="http://localhost:3000/dashboard">DashBoard</a>
+                    </li>
                 </ul>
+
+
+
+
                 <form className="form-inline my-2 my-lg-0">
                     <input onChange={(event)=>{companyFilter(event.target.value)}} className="form-control mr-sm-2" type="search" placeholder="Company Name" aria-label="Search" />
                 </form>
+
 
             </div>
         </nav>

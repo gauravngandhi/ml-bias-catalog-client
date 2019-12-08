@@ -1,5 +1,5 @@
 const c ="https://cors-anywhere.herokuapp.com/"
-const url = "https://radiant-forest-87925.herokuapp.com/"
+const url = " https://db-bias-server.herokuapp.com/"
 class CaseService {
     constructor() {}
 
@@ -87,8 +87,7 @@ class CaseService {
         if(!bias){
             bias = "All"
         }
-        console.log(c+url +
-            "api/filter/"+bias+"/"+company)
+
         return fetch(c+url +
             "api/filter/"+bias+"/"+company, {
             method: 'get',
