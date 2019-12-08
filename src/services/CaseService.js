@@ -5,7 +5,6 @@ class CaseService {
 
     createCase = (year, company, industry, system_purpose, type_of_bias, impact, link, ml_model, location) => {
             var obj = {
-
             "time_frame": year,
             "company": company,
             "industry": industry,

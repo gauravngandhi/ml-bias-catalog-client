@@ -7,7 +7,7 @@ const CaseRow =(abc) =>
         <td>{abc.abc.company}</td>
         <td>{abc.abc.industry}</td>
         <td>{abc.abc.type_of_bias}</td>
-        <td>{abc.abc.link}</td>
+            <td><a href={abc.abc.link}>Visit</a></td>
     </tr>
 
 export default CaseRow;
