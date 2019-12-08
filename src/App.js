@@ -7,6 +7,7 @@ import DataSetTable from "./DataSetTable";
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import CaseService from './services/CaseService'
 import Dashboard from './components/Dashboard'
+import AddIncidentForm from "./components/AddIncidentForm";
 
 class App extends React.Component{
 
@@ -40,7 +41,7 @@ class App extends React.Component{
     }
 
     addCase = (year, company, industry, system_purpose, type_of_bias, impact, link, ml_model, location) => {
-        this.caseService.addCase(year, company, industry, system_purpose, type_of_bias, impact, link, ml_model, location)
+        this.caseService.createCase(year, company, industry, system_purpose, type_of_bias, impact, link, ml_model, location)
     }
     companyFilter = (filter) =>{
         this.setState({
@@ -75,6 +76,7 @@ class App extends React.Component{
                    render={() =>
                        <Login doLogin={this.login} />}/>
               <Route path={"/dashboard"} render={()=> <Dashboard />} />
+              <Router path={"/createcase"} render={() => <AddIncidentForm/>} />
           </div>
 
         </Router>
@@ -87,6 +89,7 @@ class App extends React.Component{
                                          companyFilter={this.companyFilter}
                                          biasFilter={this.biasFilter}/>}/>
                 <Route path={"/dashboard"} render={()=> <Dashboard />} />
+                <Router path={"/createcase"} render={() => <AddIncidentForm/>} />
             </div>
             {/*<div></div>*/}
         </Router>
