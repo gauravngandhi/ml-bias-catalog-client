@@ -74,7 +74,7 @@ class CaseService {
                 }
             });
 
-            xhr.open("GET", "http://localhost:5000/"+"api/dataset/");
+            xhr.open("GET", "https://radiant-forest-87925.herokuapp.com/"+"api/dataset");
             xhr.setRequestHeader("cache-control", "no-cache");
             xhr.setRequestHeader("Postman-Token", "1aa486c8-c855-4dad-abed-1237dfa5c423");
 
