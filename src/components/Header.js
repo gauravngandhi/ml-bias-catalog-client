@@ -7,7 +7,7 @@ const Header =() =>
             <div className="col-4">
                 <a className="navbar-brand fa fa-bars">
                 </a>
-                <Link to={'/Dashboard'} ><h2 className="navbar-brand">Candor</h2> </Link>
+                {/* <Link to={'/Dashboard'} ><h2 className="navbar-brand">Candor</h2> </Link> */}
             </div>
         </nav>
     </div>

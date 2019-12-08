@@ -4,6 +4,7 @@ import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Login from "./Login";
 import DataSetTable from "./DataSetTable";
+import DashBoard from './components/Dashboard'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import CaseService from './services/CaseService'
 
@@ -79,8 +80,9 @@ class App extends React.Component{
                        render={() =>
                            <DataSetTable abcs={this.state.cases}
                                          companyFilter={this.companyFilter}
-                                         biasFilter={this.biasFilter}/>}/>
+                                         biasFilter={this.biasFilter}/>}/>                    
             </div>
+            <div><Route path={"/Dashboard"} render={()=> <Dashboard />}/></div>
         </Router>
     )
   }
