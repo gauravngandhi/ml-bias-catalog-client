@@ -65,7 +65,8 @@ class CaseService {
                 method: 'get',
                 credentials: "include",
                 headers: {
-                    'Content-type': 'application/json'
+                    'Content-type': 'application/json',
+                    'Access-Control-Allow-Origin':'*'
                 }
             }).then(response => response.json())
                 .catch(error => {
