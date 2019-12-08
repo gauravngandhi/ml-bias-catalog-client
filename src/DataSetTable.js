@@ -16,7 +16,7 @@ const DataSetTable = ({abcs, companyFilter, biasFilter}) =>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item dropdown">
-                        <select class="dropdown-menu" onChange={(event)=>{biasFilter(event.target.value)}}>
+                        <select  onChange={(event)=>{biasFilter(event.target.value)}}>
                             <option  value="Gender" >Gender</option>
                             <option  value="Racial">Racial</option>
                             <option  value="Regional">Racial</option>
