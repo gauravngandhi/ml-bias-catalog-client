@@ -71,7 +71,9 @@ class App extends React.Component{
             <Route path='/' exact
                    render={() =>
                        <Login doLogin={this.login} />}/>
+              <Route path={"/dashboard"} render={()=> <Dashboard />} />
           </div>
+
         </Router>
         ||
         <Router>
@@ -80,9 +82,10 @@ class App extends React.Component{
                        render={() =>
                            <DataSetTable abcs={this.state.cases}
                                          companyFilter={this.companyFilter}
-                                         biasFilter={this.biasFilter}/>}/>                    
+                                         biasFilter={this.biasFilter}/>}/>
+                <Route path={"/dashboard"} render={()=> <Dashboard />} />
             </div>
-            <div><Route path={"/Dashboard"} render={()=> <Dashboard />}/></div>
+            {/*<div></div>*/}
         </Router>
     )
   }

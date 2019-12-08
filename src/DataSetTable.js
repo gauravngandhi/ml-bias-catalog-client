@@ -1,6 +1,5 @@
 import React from 'react';
 import CaseRow from './CaseRow'
-// import CourseListNav from '../components/CourseListNav';
 
 const DataSetTable = ({abcs, companyFilter, biasFilter}) =>
     <div>
