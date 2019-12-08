@@ -60,7 +60,7 @@ class CaseService {
 
     findAllCases = () =>
         {
-            return fetch("https://cors-anywhere.herokuapp.com/https://radiant-forest-87925.herokuapp.com/" +
+            return fetch("https://radiant-forest-87925.herokuapp.com/" +
                                 "api/dataset" , {
                 method: 'get',
                 credentials: "include",
