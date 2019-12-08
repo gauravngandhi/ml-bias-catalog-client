@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import { Chart } from "react-google-charts";
 import ChartService from "../services/ChartService";
-import BiasService from "../services/BiasService";
+import DatasetService from "../services/DatasetService";
 
 class IncidentsReportedPerYearChartByBias extends Component {
 
     chartService = ChartService.getInstance();
-    biasService = BiasService.getInstance();
+    datasetService = DatasetService.getInstance();
     constructor(props) {
         super(props);
         this.state = {
@@ -16,18 +16,24 @@ class IncidentsReportedPerYearChartByBias extends Component {
 
     getChartData = () => {
         let currentChartData;
+        console.log("asd");
         const incidentPromise =  this.chartService.getIncidentsReportedPerYearByBias();
-        const biasTypePromise =  this.biasService.getAllBias();
+        const biasTypePromise =  this.datasetService.getAllBias();
         Promise.all([incidentPromise, biasTypePromise])
             .then(res => {
                 const incidentData = res[0];
                 const biasTypes = res[1];
+                console.log(incidentData);
+                console.log(biasTypes);
                 let chartDataType = ['Year'];
-                biasTypes.forEach(bias => chartDataType.push(bias.type));
+                biasTypes.forEach(bias => chartDataType.push(bias));
                 let data = [chartDataType];
                 incidentData.forEach(inData => {
                     let row = [inData.Year.toString()];
-                    inData.CountByBias.forEach(biasCount => row.push(biasCount.Count));
+                    inData.CountByBias.forEach(biasCount => {
+                        if(biasCount.Bias != null)
+                            row.push(biasCount.Count)
+                        });
                     data.push(row);
                 });
                 console.log(data);

@@ -41,7 +41,7 @@ class TopCompanyCountTable extends Component {
                             data => {
                                 return (
                                     <tr>
-                                        <td>{data._id}</td>
+                                        <td>{ data._id == null ? 'Unnamed Company' : data._id}</td>
                                         <td>{data.count}</td>
                                     </tr>
                                 )
