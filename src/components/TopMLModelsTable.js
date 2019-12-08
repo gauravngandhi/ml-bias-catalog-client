@@ -40,7 +40,7 @@ class TopMLModelsTable extends Component {
                         data => {
                             return (
                                 <tr>
-                                    <td>{data._id}</td>
+                                    <td>{data._id == null ? 'Unnamed Model' : data._id}</td>
                                     <td>{data.count}</td>
                                 </tr>
                             )

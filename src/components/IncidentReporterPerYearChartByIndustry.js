@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import { Chart } from "react-google-charts";
 import ChartService from "../services/ChartService";
-import IndustryService from "../services/IndustryService";
+import DatasetService from "../services/DatasetService";
 
 class IncidentsReportedPerYearChartByIndustry extends Component {
 
     chartService = ChartService.getInstance();
-    industryService = IndustryService.getInstance();
+    datasetService = DatasetService.getInstance();
     constructor(props) {
         super(props);
         this.state = {
@@ -17,19 +17,22 @@ class IncidentsReportedPerYearChartByIndustry extends Component {
     getChartData = () => {
         let currentChartData;
         const incidentPromise =  this.chartService.getIncidentReportedPerYearByIndustry();
-        const industryPromise =  this.industryService.getAllIndustry();
+        const industryPromise =  this.datasetService.getAllIndustry();
         Promise.all([incidentPromise, industryPromise])
             .then(res => {
                 const incidentData = res[0];
                 const industryTypes = res[1];
                 //console.log(biasTypes);
                 let chartDataType = ['Year'];
-                industryTypes.forEach(bias => chartDataType.push(bias.name));
+                industryTypes.forEach(industry => chartDataType.push(industry));
                 let data = [chartDataType];
                 incidentData.forEach(inData => {
                     //console.log(year);
                     let row = [inData.Year.toString()];
-                    inData.CountByIndustry.forEach(industryCount => row.push(industryCount.Count));
+                    inData.CountByIndustry.forEach(industryCount => {
+                        if(industryCount.Industry != null)
+                            row.push(industryCount.Count)
+                    });
                     data.push(row);
                 });
                 console.log(data);
