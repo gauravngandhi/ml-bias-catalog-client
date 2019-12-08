@@ -1,5 +1,5 @@
 const c ="https://cors-anywhere.herokuapp.com/"
-const url = " https://db-bias-server.herokuapp.com/"
+const url = "https://db-bias-server.herokuapp.com/"
 class CaseService {
     constructor() {}
 
