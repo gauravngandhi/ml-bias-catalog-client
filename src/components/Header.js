@@ -9,9 +9,9 @@ const Header =() =>
                 </a>
                 {/* <Link to={'/Dashboard'} ><h2 className="navbar-brand">Candor</h2> </Link> */}
             </div>
-            <ul className={'col-4'}>
+            <ul className={'col-4 list-group list-group-horizontal'}>
             <li className="nav-item">
-                <a className="nav-link" href="https://db-bias-ui.herokuapp.com/dashboard">DashBoard</a>
+                <a className="nav-link" href="https://db-bias-ui.herokuapp.com">Incident Table</a>
             </li>
             <li className="nav-item">
                 <a className="nav-link" href="https://db-bias-ui.herokuapp.com/createcase">Create Case</a>

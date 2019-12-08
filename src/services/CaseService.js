@@ -14,10 +14,11 @@ class CaseService {
             "link": link,
             "ml_model": ml_model,
              "location": location
-            }
+            };
+            console.log(obj);
 
             return fetch(c+url +
-                "api/dataset" , {
+                "api/dataset/create" , {
                 method: 'post',
                 body: JSON.stringify(obj),
                 credentials: "omit",

@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
-const AddIncidentForm =  (handleSubmit) =>
+const AddIncidentForm =  ({handleSubmit}) =>
     <div className="row">
         <div className="col-2"></div>
         <div className="col-8">
     <form>
         <div className={'form-group'}>
-            <label for={'year'}>Year</label>
+            <label htmlFor={'year'}>Year</label>
             <input type={'text'} className={'form-control'} id='year' placeholder={'enter year'} />
         </div>
         <div className={'form-group'}>
@@ -14,15 +14,15 @@ const AddIncidentForm =  (handleSubmit) =>
             <input type={'text'} className={'form-control'} id='company' placeholder={'enter company'}/>
         </div>
         <div className={'form-group'}>
-            <label htmlFor={'industry'}>Year</label>
+            <label htmlFor={'industry'}>Industry</label>
             <input type={'text'} className={'form-control'} id='industry' placeholder={'enter industry'}/>
         </div>
         <div className={'form-group'}>
-            <label htmlFor={'system_purpose'}>Year</label>
+            <label htmlFor={'system_purpose'}>System Purpose</label>
             <input type={'text'} className={'form-control'} id='system_purpose' placeholder={'enter system purpose'}/>
         </div>
         <div className={'form-group'}>
-            <label htmlFor={'type_of_bias'}>Year</label>
+            <label htmlFor={'type_of_bias'}>Type of Bias</label>
             <input type={'text'} className={'form-control'} id='type_of_bias' placeholder={'enter type of bias'}/>
         </div>
         <div className={'form-group'}>
@@ -30,18 +30,19 @@ const AddIncidentForm =  (handleSubmit) =>
             <input type={'text'} className={'form-control'} id='impact' placeholder={'enter Impact'}/>
         </div>
         <div className={'form-group'}>
-            <label htmlFor={'link'}>Year</label>
+            <label htmlFor={'link'}>Link</label>
             <input type={'text'} className={'form-control'} id='link' placeholder={'enter link'}/>
         </div>
         <div className={'form-group'}>
-            <label htmlFor={'location'}>Year</label>
+            <label htmlFor={'location'}>Location</label>
             <input type={'text'} className={'form-control'} id='location' placeholder={'enter year'}/>
         </div>
         <div className={'form-group'}>
-            <label htmlFor={'ml_model'}>Year</label>
+            <label htmlFor={'ml_model'}>ML Model</label>
             <input type={'text'} className={'form-control'} id='ml_model' placeholder={'enter ml_model'}/>
         </div>
-        <button type="submit" className="btn btn-primary" onClick={()=>{
+        <button type="button" className="btn btn-primary" onClick={()=>{
+            console.log("asd");
             handleSubmit(
                 document.getElementById('year').value,
                 document.getElementById('company').value,
