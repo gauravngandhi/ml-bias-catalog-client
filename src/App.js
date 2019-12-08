@@ -4,9 +4,9 @@ import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Login from "./Login";
 import DataSetTable from "./DataSetTable";
-import DashBoard from './components/Dashboard'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import CaseService from './services/CaseService'
+import Dashboard from './components/Dashboard'
 
 class App extends React.Component{
 
