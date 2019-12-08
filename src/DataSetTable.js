@@ -19,8 +19,8 @@ const DataSetTable = ({abcs, companyFilter, biasFilter}) =>
                         <select  onChange={(event)=>{biasFilter(event.target.value)}}>
                             <option  value="Gender" >Gender</option>
                             <option  value="Racial">Racial</option>
-                            <option  value="Regional">Racial</option>
-                            <option  value="Facial">Racial</option>
+                            <option  value="Regional">Regional</option>
+                            <option  value="Facial">Facial</option>
                             <option  value="All">All</option>
                         </select>
                     </li>
