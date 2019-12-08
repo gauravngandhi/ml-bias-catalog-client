@@ -25,7 +25,7 @@ const DataSetTable = ({abcs, companyFilter, biasFilter}) =>
                         </select>
                     </li>
                     <li className="nav-item">
-                        <a className="btn btn-secondary" href="https://db-bias-ui.herokuapp.com/dashboard">DashBoard</a>
+                        <a className="nav-link" href="https://db-bias-ui.herokuapp.com/dashboard">DashBoard</a>
                     </li>
                 </ul>
 
